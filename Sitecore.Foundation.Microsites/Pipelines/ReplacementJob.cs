@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sitecore.Foundation.Microsites.Utilities;
 
 namespace Sitecore.Foundation.Microsites.Pipelines
 {
@@ -77,7 +78,7 @@ namespace Sitecore.Foundation.Microsites.Pipelines
         private bool ExcludeStandardSitecoreFieldsExceptLayout(Field field)
         {
             Assert.ArgumentNotNull(field, "field");
-            return field.ID == FieldIDs.LayoutField || !field.Name.StartsWith("__");
+            return field.ID == FieldIDs.LayoutField || !field.IsStandardTemplateField();
         }
     }
 }

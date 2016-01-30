@@ -12,6 +12,7 @@ using Sitecore.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
+using Sitecore.Foundation.Microsites.Utilities;
 using Sitecore.Sites;
 using StringDictionary = Sitecore.Collections.StringDictionary;
 
@@ -26,8 +27,6 @@ namespace Sitecore.Foundation.Microsites.Providers
 
         public override Site GetSite(string siteName)
         {
-            Assert.IsNotNullOrEmpty(siteName, "siteName");
-
             InitializeSites();
 
             Site site;
@@ -113,13 +112,13 @@ namespace Sitecore.Foundation.Microsites.Providers
 
             Site site = null;
 
-            if (IsValidSiteName(item[Templates.MicrositeRoot.Fields.SiteName]))
+            if (IsValidSiteName(item.Name))
             {
                 var properties = GetSiteProperties(item);
 
-                if (AssertMandatoryProperties(properties))
+                if (properties != null && AssertMandatoryProperties(properties))
                 {
-                    site = new Site(item[Templates.MicrositeRoot.Fields.SiteName], properties);
+                    site = new Site(item.Name, properties);
                 }
             }
 
@@ -128,19 +127,18 @@ namespace Sitecore.Foundation.Microsites.Providers
 
         private bool AssertMandatoryProperties(StringDictionary properties)
         {
-            return (properties.ContainsKey("siteName") && !string.IsNullOrEmpty(properties["siteName"])
-                    && properties.ContainsKey("rootPath") && !string.IsNullOrEmpty(properties["rootPath"])
-                    && properties.ContainsKey("hostName") && !string.IsNullOrEmpty(properties["hostName"])
-                    && properties.ContainsKey("startItem") && !string.IsNullOrEmpty(properties["startItem"])
-                    && properties.ContainsKey("domain") && !string.IsNullOrEmpty(properties["domain"])
-                    && properties.ContainsKey("database") && !string.IsNullOrEmpty(properties["database"]));
+            return properties.ContainsKeyWithValue(Constants.SiteParameters.SiteName)
+                   && properties.ContainsKeyWithValue(Constants.SiteParameters.RootPath)
+                   && properties.ContainsKeyWithValue(Constants.SiteParameters.HostName)
+                   && properties.ContainsKeyWithValue(Constants.SiteParameters.Language)
+                   && properties.ContainsKeyWithValue(Constants.SiteParameters.StartItem)
+                   && properties.ContainsKeyWithValue(Constants.SiteParameters.Domain) //?
+                   && properties.ContainsKeyWithValue(Constants.SiteParameters.Database);
         }
 
         [MethodImpl(MethodImplOptions.NoOptimization)]
         private bool IsValidSiteName(string siteName)
         {
-            Assert.ArgumentNotNullOrEmpty(siteName, "siteName");
-
             bool valid = false;
 
             try
@@ -160,18 +158,30 @@ namespace Sitecore.Foundation.Microsites.Providers
         private StringDictionary GetSiteProperties(Item item)
         {
             Assert.ArgumentNotNull(item, "item");
-            Assert.IsNotNull(item.Fields[Templates.MicrositeRoot.Fields.SiteParameters], "item field SiteParameters");
+
+            Item startItem = item.Children.FirstOrDefault(i => i.TemplateID.Equals(Templates.MicrositeRoot.Fields.SiteHome) 
+                                                            || i.Template.BaseTemplates.Any(t => t.ID.Equals(Templates.MicrositeRoot.Fields.SiteHome)));
+            if (startItem == null)
+                return null;
+
+            var properties = new StringDictionary
+            {
+                {Constants.SiteParameters.SiteName, item.Name},
+                {Constants.SiteParameters.RootPath, item.Paths.FullPath},
+                {Constants.SiteParameters.StartItem, startItem.Name },
+                {Constants.SiteParameters.Language, item[Templates.MicrositeRoot.Fields.SiteLanguage] },
+                {Constants.SiteParameters.Database, item[Templates.MicrositeRoot.Fields.SiteDatabase] },
+                {Constants.SiteParameters.HostName, item[Templates.MicrositeRoot.Fields.SiteHostName] },
+                {Constants.SiteParameters.Domain, item[Templates.MicrositeRoot.Fields.SiteDomain] }
+            };
 
             NameValueListField siteParametersField = item.Fields[Templates.MicrositeRoot.Fields.SiteParameters];
 
-            var properties = new StringDictionary();
-
             foreach (string key in siteParametersField.NameValues)
             {
-                properties.Add(key, HttpUtility.UrlDecode(siteParametersField.NameValues[key]));
+                if (!properties.ContainsKey(key))
+                    properties.Add(key, HttpUtility.UrlDecode(siteParametersField.NameValues[key]));
             }
-
-            properties.Add("siteName", item[Templates.MicrositeRoot.Fields.SiteName]);
 
             return properties;
         }

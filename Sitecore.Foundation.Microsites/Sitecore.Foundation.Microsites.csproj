@@ -45,15 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants.cs" />
+    <Compile Include="Settings\Constants.cs" />
     <Compile Include="Pipelines\ItemPathTranslator.cs" />
     <Compile Include="Pipelines\ItemReferenceReplacer.cs" />
     <Compile Include="Pipelines\MicrositeBranchAdded.cs" />
     <Compile Include="Pipelines\ReplacementJob.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\DynamicMicrositesProvider.cs" />
-    <Compile Include="StylesCache.cs" />
-    <Compile Include="Templates.cs" />
+    <Compile Include="Utilities\StylesCache.cs" />
+    <Compile Include="Settings\Templates.cs" />
+    <Compile Include="Utilities\ExtensionMethods.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App_Config\Include\Foundation.Microsites.config" />

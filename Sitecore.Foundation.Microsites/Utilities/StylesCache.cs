@@ -36,8 +36,8 @@ namespace Sitecore.Foundation.Microsites
 
                     var cache = new StyleCache()
                     {
-                        BackgroundColor = rootItem["Background color"],
-                        TextColor = rootItem["Text color"]
+                        BackgroundColor = rootItem[Templates.MicrositeRoot.Fields.SiteBackgroundColour],
+                        TextColor = rootItem[Templates.MicrositeRoot.Fields.SiteTextColour]
                     };
 
                     _caches.Add(Context.Site.Name, cache);
