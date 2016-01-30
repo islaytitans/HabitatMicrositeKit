@@ -27,8 +27,10 @@ namespace Sitecore.Foundation.Microsites.Pipelines
 
         private void PopupSheerSettings(Item branchRoot)
         {
-            string baseUrl = Foundation.Microsites.Constants.SiteBuilderPath;
-            SheerResponse.ShowModalDialog(string.Format("{0}?{1}={2}", baseUrl, Foundation.Microsites.Constants.RootNodeName, branchRoot.ID.ToString()));
+            Text.UrlString parameters = new Text.UrlString();
+            parameters.Add(Constants.RootNodeName, branchRoot.ID.ToString());
+
+            Shell.Framework.Windows.RunApplication("Site Builder");
         }
     }
 }
