@@ -2,10 +2,6 @@
 using Sitecore.Events;
 using Sitecore.Web.UI.Sheer;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sitecore.Foundation.Microsite.Pipelines
 {
@@ -21,7 +17,11 @@ namespace Sitecore.Foundation.Microsite.Pipelines
             if (targetItem.Branch.InnerItem.Children.Count != 1)
                 return;
             Item branchRoot = targetItem.Branch.InnerItem.Children[0];
-            PopupSheerSettings(branchRoot);
+
+            if (branchRoot != null && branchRoot.ID == Constants.RootTemplateID)
+            {
+                PopupSheerSettings(branchRoot);
+            }
         }
 
         private void PopupSheerSettings(Item branchRoot)
