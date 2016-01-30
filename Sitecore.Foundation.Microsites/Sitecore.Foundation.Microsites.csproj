@@ -49,6 +49,7 @@
     <Compile Include="Pipelines\MicrositeBranchAdded.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\DynamicMicrositesProvider.cs" />
+    <Compile Include="StylesCache.cs" />
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
