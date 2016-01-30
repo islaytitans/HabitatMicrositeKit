@@ -116,6 +116,7 @@
     <Compile Include="Dialogs\SiteBuilder.aspx.designer.cs">
       <DependentUpon>SiteBuilder.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EventHandlers\PublishEnd.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

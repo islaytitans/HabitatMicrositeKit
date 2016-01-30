@@ -17,7 +17,11 @@ namespace Sitecore.Foundation.Microsites.Pipelines
             Assert.IsNotNull(createdArgs, "args");
             if (createdArgs != null)
             {
+
                 if (createdArgs.Item == null)
+                    return;
+
+                if (createdArgs.Item.Database.Name != "master")
                     return;
 
                 if (createdArgs.Item.TemplateID == Templates.MicrositeRoot.ID)
