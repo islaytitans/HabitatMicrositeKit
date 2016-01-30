@@ -17,26 +17,12 @@ using StringDictionary = Sitecore.Collections.StringDictionary;
 
 namespace Sitecore.Foundation.Microsites.Providers
 {
-    public class DynamicMicrositesProvider : ConfigSiteProvider
+    public class DynamicMicrositesProvider : SiteProvider
     {
         private object _lock = new object();
         private SafeDictionary<string, Site> _siteDictionary;
         private SiteCollection _sitesCollection;
         public string DatabaseName { get; set; }
-        protected readonly Sitecore.Sites.SiteProvider siteProvider;
-
-        public DynamicMicrositesProvider(Sitecore.Sites.SiteProvider implementation)
-        {
-            Assert.IsNotNull(implementation, "implementation");
-
-            siteProvider = implementation;
-        }
-
-        public override void Initialize(string name, NameValueCollection config)
-        {
-            base.Initialize(name, config);
-            siteProvider.Initialize(name, config);
-        }
 
         public override Site GetSite(string siteName)
         {
@@ -48,11 +34,7 @@ namespace Sitecore.Foundation.Microsites.Providers
 
             if (_siteDictionary.TryGetValue(siteName, out site))
             {
-                site = siteProvider.GetSite(siteName);
-            }
-            else
-            {
-                site = base.GetSite(siteName);
+                site = _siteDictionary[siteName];
             }
 
             return site;
@@ -64,11 +46,7 @@ namespace Sitecore.Foundation.Microsites.Providers
 
             var sitesCollection = new SiteCollection();
 
-            // Add dynamic sites
             sitesCollection.AddRange(_sitesCollection);
-
-            // Add configured sites
-            sitesCollection.AddRange(base.GetSites());
 
             return sitesCollection;
         }
@@ -79,12 +57,12 @@ namespace Sitecore.Foundation.Microsites.Providers
             if (database == null)
                 return;
 
-            if (_siteDictionary != null)
+            if (_siteDictionary != null && _siteDictionary.Any())
                 return;
 
             lock (_lock)
             {
-                if (_siteDictionary != null)
+                if (_siteDictionary != null && _siteDictionary.Any())
                     return;
 
                 var sitesCollection = new SiteCollection();
@@ -133,20 +111,29 @@ namespace Sitecore.Foundation.Microsites.Providers
         {
             Assert.ArgumentNotNull(item, "item");
 
+            Site site = null;
+
             if (IsValidSiteName(item[Templates.MicrositeRoot.Fields.SiteName]))
             {
                 var properties = GetSiteProperties(item);
 
-                var site = new Site(item[Templates.MicrositeRoot.Fields.SiteName], properties);
-
-                //TODO - determine the purpose of setting the site item id and how to achieve it
-
-                //site.SetSiteItemId(item.ID);
-
-                return site;
+                if (AssertMandatoryProperties(properties))
+                {
+                    site = new Site(item[Templates.MicrositeRoot.Fields.SiteName], properties);
+                }
             }
 
-            return null;
+            return site;
+        }
+
+        private bool AssertMandatoryProperties(StringDictionary properties)
+        {
+            return (properties.ContainsKey("siteName") && !string.IsNullOrEmpty(properties["siteName"])
+                    && properties.ContainsKey("rootPath") && !string.IsNullOrEmpty(properties["rootPath"])
+                    && properties.ContainsKey("hostName") && !string.IsNullOrEmpty(properties["hostName"])
+                    && properties.ContainsKey("startItem") && !string.IsNullOrEmpty(properties["startItem"])
+                    && properties.ContainsKey("domain") && !string.IsNullOrEmpty(properties["domain"])
+                    && properties.ContainsKey("database") && !string.IsNullOrEmpty(properties["database"]));
         }
 
         [MethodImpl(MethodImplOptions.NoOptimization)]
@@ -183,6 +170,8 @@ namespace Sitecore.Foundation.Microsites.Providers
             {
                 properties.Add(key, HttpUtility.UrlDecode(siteParametersField.NameValues[key]));
             }
+
+            properties.Add("siteName", item[Templates.MicrositeRoot.Fields.SiteName]);
 
             return properties;
         }
