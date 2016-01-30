@@ -25,6 +25,12 @@ namespace Sitecore.Foundation.Microsites.Providers
         private SiteCollection _sitesCollection;
         public string DatabaseName { get; set; }
 
+        public void Clear()
+        {
+            _siteDictionary = null;
+            _sitesCollection = null;
+        }
+
         public override Site GetSite(string siteName)
         {
             InitializeSites();
