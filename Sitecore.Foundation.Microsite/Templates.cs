@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Sitecore.Data;
 
-namespace Sitecore.Foundation.Microsite
+namespace Sitecore.Foundation.Microsites
 {
     public class Templates
     {

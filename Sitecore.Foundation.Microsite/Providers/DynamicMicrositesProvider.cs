@@ -15,7 +15,7 @@ using Sitecore.Diagnostics;
 using Sitecore.Sites;
 using StringDictionary = Sitecore.Collections.StringDictionary;
 
-namespace Sitecore.Foundation.Microsite.Providers
+namespace Sitecore.Foundation.Microsites.Providers
 {
     public class DynamicMicrositesProvider : Sitecore.Sites.SiteProvider
     {
