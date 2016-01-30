@@ -46,6 +46,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="pleasedelete.js" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Sitecore.Foundation.Microsite\Sitecore.Foundation.Microsite.csproj">
       <Project>{52dd56c3-b949-4166-9c84-410428786228}</Project>
       <Name>Sitecore.Foundation.Microsite</Name>
