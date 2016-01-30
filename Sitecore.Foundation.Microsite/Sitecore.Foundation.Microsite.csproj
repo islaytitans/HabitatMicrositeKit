@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E21F234E-01D9-40D9-B4A2-CEED6D13B4D1}</ProjectGuid>
+    <ProjectGuid>{52DD56C3-B949-4166-9C84-410428786228}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sitecore.Feature.Microsites</RootNamespace>
-    <AssemblyName>Sitecore.Feature.Microsites</AssemblyName>
+    <RootNamespace>Sitecore.Foundation.Microsite</RootNamespace>
+    <AssemblyName>Sitecore.Foundation.Microsite</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

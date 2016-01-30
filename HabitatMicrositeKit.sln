@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Microsites", "Sitecore.Feature.Microsites\Sitecore.Feature.Microsites.csproj", "{E21F234E-01D9-40D9-B4A2-CEED6D13B4D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Microsite", "Sitecore.Foundation.Microsite\Sitecore.Foundation.Microsite.csproj", "{52DD56C3-B949-4166-9C84-410428786228}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E21F234E-01D9-40D9-B4A2-CEED6D13B4D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E21F234E-01D9-40D9-B4A2-CEED6D13B4D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E21F234E-01D9-40D9-B4A2-CEED6D13B4D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52DD56C3-B949-4166-9C84-410428786228}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52DD56C3-B949-4166-9C84-410428786228}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52DD56C3-B949-4166-9C84-410428786228}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52DD56C3-B949-4166-9C84-410428786228}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
