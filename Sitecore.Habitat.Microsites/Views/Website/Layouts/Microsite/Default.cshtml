@@ -1,6 +1,8 @@
-﻿@using Sitecore.Foundation.Assets
+﻿
+@using Sitecore.Foundation.Assets
 @using Sitecore.Foundation.Assets.Models
 @using Sitecore.Mvc.Analytics.Extensions
+@using Sitecore.Foundation.Microsites
 @inherits WebViewPage
 @{
     Layout = null;
@@ -22,6 +24,15 @@
     <!-- Latest compiled and minified JavaScript -->
     @RenderAssetsService.Current.RenderScript(ScriptLocation.Head)
     @RenderAssetsService.Current.RenderStyles()
+
+    
+    <style>
+        body { 
+            background: @StyleCache.Instance.BackgroundColor; 
+            color: @StyleCache.Instance.TextColor;  
+        }
+    </style>
+
     @Html.Sitecore().VisitorIdentification()
 </head>
 <body class="@(Sitecore.Context.PageMode.IsNormal ? "" : (Sitecore.Context.PageMode.IsPageEditor ? "pagemode-edit" : "pagemode-preview"))">
