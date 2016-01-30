@@ -132,7 +132,7 @@ namespace Sitecore.Foundation.Microsites.Providers
                    && properties.ContainsKeyWithValue(Constants.SiteParameters.HostName)
                    && properties.ContainsKeyWithValue(Constants.SiteParameters.Language)
                    && properties.ContainsKeyWithValue(Constants.SiteParameters.StartItem)
-                   && properties.ContainsKeyWithValue(Constants.SiteParameters.Domain) //?
+                   && properties.ContainsKeyWithValue(Constants.SiteParameters.Domain) 
                    && properties.ContainsKeyWithValue(Constants.SiteParameters.Database);
         }
 

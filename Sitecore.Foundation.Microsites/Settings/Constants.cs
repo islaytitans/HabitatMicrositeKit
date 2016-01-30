@@ -10,6 +10,7 @@ namespace Sitecore.Foundation.Microsites
     public class Constants
     {
         public const string SiteBuilderPath = "/Dialogs/SiteBuilder.aspx";
+        public const string RootNodeName = "rootNode";
 
         public struct SiteParameters
         {
