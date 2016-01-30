@@ -118,13 +118,13 @@ namespace Sitecore.Foundation.Microsites.Providers
 
             Site site = null;
 
-            if (IsValidSiteName(item.Name))
+            if (IsValidSiteName(item.Name.ToSiteName()))
             {
                 var properties = GetSiteProperties(item);
 
                 if (properties != null && AssertMandatoryProperties(properties))
                 {
-                    site = new Site(item.Name, properties);
+                    site = new Site(item.Name.ToSiteName(), properties);
                 }
             }
 
@@ -172,7 +172,7 @@ namespace Sitecore.Foundation.Microsites.Providers
 
             var properties = new StringDictionary
             {
-                {Constants.SiteParameters.SiteName, item.Name},
+                {Constants.SiteParameters.SiteName, item.Name.ToSiteName()},
                 {Constants.SiteParameters.RootPath, item.Paths.FullPath},
                 {Constants.SiteParameters.StartItem, startItem.Name },
                 {Constants.SiteParameters.Language, item[Templates.MicrositeRoot.Fields.SiteLanguage] },

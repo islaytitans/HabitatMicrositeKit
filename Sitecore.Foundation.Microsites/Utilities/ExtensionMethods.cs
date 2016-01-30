@@ -26,5 +26,10 @@ namespace Sitecore.Foundation.Microsites.Utilities
 
             return template.ContainsField(f.ID);
         }
+
+        public static string ToSiteName(this string s)
+        {
+            return s.Replace(" ", string.Empty);
+        }
     }
 }
