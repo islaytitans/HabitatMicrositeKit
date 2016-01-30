@@ -33,6 +33,11 @@ namespace Sitecore.Foundation.Microsites.Pipelines
             parameters.Add(Constants.RootNodeName, branchRoot.ID.ToString());
 
             Shell.Framework.Windows.RunApplication("Site Builder",parameters.ToString());
+
+            var branch = branchRoot.Database.GetItem(new Data.ID("{6208EF71-0793-49FD-AD51-BBFDA80FD814}"));
+
+            new ReferenceReplacementJob(branch.Children[0], branchRoot).StartAsync();
         }
+
     }
 }
