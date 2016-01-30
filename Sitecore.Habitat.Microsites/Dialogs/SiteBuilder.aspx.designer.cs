@@ -40,15 +40,6 @@ namespace Sitecore.Habitat.Microsites.Dialogs {
         protected global::System.Web.UI.WebControls.Label lblSite;
         
         /// <summary>
-        /// txtname control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtname;
-        
-        /// <summary>
         /// txtHostname control.
         /// </summary>
         /// <remarks>
@@ -56,24 +47,6 @@ namespace Sitecore.Habitat.Microsites.Dialogs {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtHostname;
-        
-        /// <summary>
-        /// txtRootPath control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRootPath;
-        
-        /// <summary>
-        /// txtStartItem control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStartItem;
         
         /// <summary>
         /// txtLanguage control.
@@ -92,24 +65,6 @@ namespace Sitecore.Habitat.Microsites.Dialogs {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDatabase;
-        
-        /// <summary>
-        /// txtContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContent;
-        
-        /// <summary>
-        /// TextBox2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
         
         /// <summary>
         /// txtBgColour control.

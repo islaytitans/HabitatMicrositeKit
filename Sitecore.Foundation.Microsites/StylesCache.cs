@@ -41,7 +41,7 @@ namespace Sitecore.Foundation.Microsites
                     };
 
                     _caches.Add(Context.Site.Name, cache);
-                }
+                } 
 
                 return _caches[Context.Site.Name];
             }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sitecore.Data.Fields;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
@@ -17,6 +18,11 @@ namespace Sitecore.Habitat.Microsites.Dialogs
             {
                 var rootNodeMaster = Configuration.Factory.GetDatabase("master").GetItem(rootNode);
                 lblSite.Text = rootNodeMaster.Name;
+
+                txtLanguage.Text = rootNodeMaster["Language"];
+                txtDatabase.Text = rootNodeMaster["Database"];
+                txtBgColour.Text = rootNodeMaster["Background color"];
+                txtTextColor.Text = rootNodeMaster["Text color"];
             }
         }
 
@@ -33,16 +39,8 @@ namespace Sitecore.Habitat.Microsites.Dialogs
                         rootNodeMaster.Editing.BeginEdit();
                         try
                         {
-                            var values = new NameValueCollection();
-                            values.Add("name", txtname.Text);
-                            values.Add("hostname", txtHostname.Text);
-                            values.Add("rootPath", txtRootPath.Text);
-                            values.Add("startItem", txtStartItem.Text);
-                            values.Add("language", txtLanguage.Text);
-                            values.Add("content", txtContent.Text);
-
-
-                            rootNodeMaster[Foundation.Microsites.Templates.MicrositeRoot.Fields.SiteParameters] = StringUtil.NameValuesToString(values, " &");
+                            rootNodeMaster["Language"] = txtLanguage.Text;
+                            rootNodeMaster["Database"] = txtDatabase.Text;
 
                             rootNodeMaster["Background color"] = txtBgColour.Text;
                             rootNodeMaster["Text color"] = txtTextColor.Text;
