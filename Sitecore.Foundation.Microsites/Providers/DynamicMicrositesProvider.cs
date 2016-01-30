@@ -79,12 +79,12 @@ namespace Sitecore.Foundation.Microsites.Providers
             if (database == null)
                 return;
 
-            if (_siteDictionary != null)
+            if (_siteDictionary != null && _siteDictionary.Any())
                 return;
 
             lock (_lock)
             {
-                if (_siteDictionary != null)
+                if (_siteDictionary != null && _siteDictionary.Any())
                     return;
 
                 var sitesCollection = new SiteCollection();
@@ -150,13 +150,12 @@ namespace Sitecore.Foundation.Microsites.Providers
 
         private bool AssertMandatoryProperties(StringDictionary properties)
         {
-            return (properties.ContainsKey("siteName")
-                    && properties.ContainsKey("virtualFolder")
-                    && properties.ContainsKey("physicalFolder")
-                    && properties.ContainsKey("rootPath")
-                    && properties.ContainsKey("startItem")
-                    && properties.ContainsKey("domain")
-                    && properties.ContainsKey("database"));
+            return (properties.ContainsKey("siteName") && !string.IsNullOrEmpty(properties["siteName"])
+                    && properties.ContainsKey("rootPath") && !string.IsNullOrEmpty(properties["rootPath"])
+                    && properties.ContainsKey("hostName") && !string.IsNullOrEmpty(properties["hostName"])
+                    && properties.ContainsKey("startItem") && !string.IsNullOrEmpty(properties["startItem"])
+                    && properties.ContainsKey("domain") && !string.IsNullOrEmpty(properties["domain"])
+                    && properties.ContainsKey("database") && !string.IsNullOrEmpty(properties["database"]));
         }
 
         [MethodImpl(MethodImplOptions.NoOptimization)]
@@ -193,6 +192,8 @@ namespace Sitecore.Foundation.Microsites.Providers
             {
                 properties.Add(key, HttpUtility.UrlDecode(siteParametersField.NameValues[key]));
             }
+
+            properties.Add("siteName", item[Templates.MicrositeRoot.Fields.SiteName]);
 
             return properties;
         }
