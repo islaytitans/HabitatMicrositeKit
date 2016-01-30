@@ -34,6 +34,324 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+    <Reference Include="Sitecore.Apps.TagInjection">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Apps.TagInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Buckets">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Buckets.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Buckets.Client">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Buckets.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.CES">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.CES.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.CES.DeviceDetection">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.CES.DeviceDetection.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.CES.DeviceDetection.Rules">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.CES.DeviceDetection.Rules.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.CES.GeoIp">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.CES.GeoIp.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.CES.GeoIp.LegacyLocation">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.CES.GeoIp.LegacyLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Cintel">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Cintel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Cintel.Client">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Cintel.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Client">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Client.LicenseOptions">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Client.LicenseOptions.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Kernel">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.LaunchPad">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.LaunchPad.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ListManagement">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.ListManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ListManagement.Analytics">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.ListManagement.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ListManagement.Client">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.ListManagement.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ListManagement.ContentSearch">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.ListManagement.ContentSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ListManagement.Services">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.ListManagement.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Logging">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Logging.Client">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Logging.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Marketing">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Marketing.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Marketing.Campaigns.Client">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Marketing.Campaigns.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Marketing.Campaigns.Services">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Marketing.Campaigns.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Marketing.Client">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Marketing.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Marketing.Core">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Marketing.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Marketing.Definitions.MarketingAssets.Repositories">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Marketing.Definitions.MarketingAssets.Repositories.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Marketing.Search">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Marketing.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Marketing.Taxonomy">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Marketing.Taxonomy.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Mvc">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Mvc.Analytics">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Mvc.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Mvc.DeviceSimulator">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Mvc.DeviceSimulator.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Mvc.ExperienceEditor">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Mvc.ExperienceEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="sitecore.nexus">
+      <HintPath>..\..\Lib\Sitecore\sitecore.nexus.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.NVelocity">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.NVelocity.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Oracle">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Oracle.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PathAnalyzer">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.PathAnalyzer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.PathAnalyzer.Services">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.PathAnalyzer.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Publishing.WebDeploy">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Publishing.WebDeploy.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Security.AntiCsrf">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Security.AntiCsrf.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.SegmentBuilder">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.SegmentBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.SequenceAnalyzer">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.SequenceAnalyzer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Services.Client">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Services.Core">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Services.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Services.Infrastructure">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Services.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Services.Infrastructure.Sitecore">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Services.Infrastructure.Sitecore.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.SessionProvider">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.SessionProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.SessionProvider.Memory">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.SessionProvider.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.SessionProvider.MongoDB">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.SessionProvider.MongoDB.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.SessionProvider.Sql">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.SessionProvider.Sql.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Shell.MarketingAutomation">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Shell.MarketingAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.Api">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.Client">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.Client.Api">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.Client.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.Client.Common">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.Client.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.Client.Domain">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.Client.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.Client.Mvc">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.Client.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.Client.Speak">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.Client.Speak.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.Configuration">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.Domain">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.ExperienceProfile.Client">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.ExperienceProfile.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.Facebook">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.Facebook.Api">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.Facebook.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.Facebook.Client">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.Facebook.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.Facebook.Client.Mvc">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.Facebook.Client.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.GooglePlus">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.GooglePlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.GooglePlus.Client">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.GooglePlus.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.GooglePlus.Client.Mvc">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.GooglePlus.Client.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.Infrastructure">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.Infrastructure.Logging">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.Infrastructure.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.Installation">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.Installation.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.Klout.Api">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.Klout.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.Klout.Client">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.Klout.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.LinkedIn">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.LinkedIn.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.LinkedIn.Client">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.LinkedIn.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.LinkedIn.Client.Mvc">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.LinkedIn.Client.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.NetworkProviders">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.NetworkProviders.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.SitecoreAccess">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.SitecoreAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.SocialMarketer">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.SocialMarketer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.SocialMarketer.Api">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.SocialMarketer.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.SocialMarketer.Client">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.SocialMarketer.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.Twitter">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.Twitter.Api">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.Twitter.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.Twitter.Client">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.Twitter.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Social.Twitter.Client.Mvc">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Social.Twitter.Client.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak.Applications">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Speak.Applications.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak.Charting">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Speak.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak.Client">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Speak.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak.Components">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Speak.Components.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak.Components.Guidance">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Speak.Components.Guidance.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak.Components.Web">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Speak.Components.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak.ItemWebApi">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Speak.ItemWebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak.Mvc">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Speak.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak.Web">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Speak.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Update">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Update.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Web">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.WFFM">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.WFFM.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.WFFM.Abstractions">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.WFFM.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.WFFM.Actions">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.WFFM.Actions.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.WFFM.Analytics">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.WFFM.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.WFFM.Client">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.WFFM.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.WFFM.Services">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.WFFM.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.WFFM.Speak">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.WFFM.Speak.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Xdb.Configuration">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Xdb.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Zip">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Zip.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
