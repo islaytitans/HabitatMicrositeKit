@@ -7,8 +7,8 @@
     <ProjectGuid>{52DD56C3-B949-4166-9C84-410428786228}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sitecore.Foundation.Microsite</RootNamespace>
-    <AssemblyName>Sitecore.Foundation.Microsite</AssemblyName>
+    <RootNamespace>Sitecore.Foundation.Microsites</RootNamespace>
+    <AssemblyName>Sitecore.Foundation.Microsites</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,6 +39,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,9 +51,12 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Pipelines\MicrositeBranchAdded.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Providers\DynamicSitesProvider.cs" />
+    <Compile Include="Providers\DynamicMicrositesProvider.cs" />
+    <Compile Include="Templates.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="App_Config\Include\Foundation.Microsites.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
