@@ -19,15 +19,10 @@ namespace Sitecore.Foundation.Microsites.Pipelines
             {
                 if (createdArgs.Item == null)
                     return;
-                if (createdArgs.Item.Branch == null)
-                    return;
-                if (createdArgs.Item.Branch.InnerItem.Children.Count != 1)
-                    return;
-                Item branchRoot = createdArgs.Item.Branch.InnerItem.Children[0];
 
-                if (branchRoot != null && branchRoot.ID == Templates.MicrositeRoot.ID)
+                if (createdArgs.Item.TemplateID == Templates.MicrositeRoot.ID)
                 {
-                    PopupSheerSettings(branchRoot);
+                    PopupSheerSettings(createdArgs.Item);
                 }
             }
         }
