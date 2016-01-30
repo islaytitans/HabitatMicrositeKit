@@ -17,7 +17,7 @@ namespace Sitecore.Habitat.Microsites.Dialogs
 
         protected void btnCreateSite_Click(object sender, EventArgs e)
         {
-            var rootNode = Request.QueryString[Foundation.Microsite.Constants.RootNodeName];
+            var rootNode = Request.QueryString[Foundation.Microsites.Constants.RootNodeName];
             if(!string.IsNullOrEmpty(rootNode))
             {
                var rootNodeMaster =  Configuration.Factory.GetDatabase("master").GetItem(rootNode);
@@ -35,7 +35,7 @@ namespace Sitecore.Habitat.Microsites.Dialogs
                             values.Add("startItem", txtStartItem.Text);
                             values.Add("language", txxtLanguage.Text);
                             values.Add("content", txtContent.Text);
-                            rootNodeMaster[Foundation.Microsite.Constants.SiteParametersName] = StringUtil.NameValuesToString(values, " &");
+                            rootNodeMaster[Foundation.Microsites.Templates.MicrositeRoot.Fields.SiteParameters] = StringUtil.NameValuesToString(values, " &");
                         }
                         finally
                         {

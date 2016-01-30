@@ -2,8 +2,9 @@
 using Sitecore.Events;
 using Sitecore.Web.UI.Sheer;
 using System;
+using Sitecore.Foundation.Microsites;
 
-namespace Sitecore.Foundation.Microsite.Pipelines
+namespace Sitecore.Foundation.Microsites.Pipelines
 {
     public class MicrositeBranchAdded
     {
@@ -18,7 +19,7 @@ namespace Sitecore.Foundation.Microsite.Pipelines
                 return;
             Item branchRoot = targetItem.Branch.InnerItem.Children[0];
 
-            if (branchRoot != null && branchRoot.ID == Constants.RootTemplateID)
+            if (branchRoot != null && branchRoot.ID == Templates.MicrositeRoot.ID)
             {
                 PopupSheerSettings(branchRoot);
             }
@@ -26,8 +27,8 @@ namespace Sitecore.Foundation.Microsite.Pipelines
 
         private void PopupSheerSettings(Item branchRoot)
         {
-            string baseUrl = Constants.SiteBuilderPath;
-            SheerResponse.ShowModalDialog(string.Format("{0}?{1}=(2)", baseUrl,Constants.RootNodeName,branchRoot.ID.ToString()));
+            string baseUrl = Foundation.Microsites.Constants.SiteBuilderPath;
+            SheerResponse.ShowModalDialog(string.Format("{0}?{1}={2}", baseUrl, Foundation.Microsites.Constants.RootNodeName, branchRoot.ID.ToString()));
         }
     }
 }
