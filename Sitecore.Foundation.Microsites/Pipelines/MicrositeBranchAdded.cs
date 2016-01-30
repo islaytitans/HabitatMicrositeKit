@@ -3,6 +3,8 @@ using Sitecore.Events;
 using Sitecore.Web.UI.Sheer;
 using System;
 using Sitecore.Foundation.Microsites;
+using Sitecore.Data.Events;
+using Sitecore.Diagnostics;
 
 namespace Sitecore.Foundation.Microsites.Pipelines
 {
@@ -10,18 +12,23 @@ namespace Sitecore.Foundation.Microsites.Pipelines
     {
         public void OnItemAdded(object sender, EventArgs args)
         {
-            Item targetItem = Event.ExtractParameter(args, 0) as Item;
-            if (targetItem == null)
-                return;
-            if (targetItem.Branch == null)
-                return;
-            if (targetItem.Branch.InnerItem.Children.Count != 1)
-                return;
-            Item branchRoot = targetItem.Branch.InnerItem.Children[0];
+            var createdArgs = Event.ExtractParameter(args, 0) as ItemCreatedEventArgs;
 
-            if (branchRoot != null && branchRoot.ID == Templates.MicrositeRoot.ID)
+            Assert.IsNotNull(createdArgs, "args");
+            if (createdArgs != null)
             {
-                PopupSheerSettings(branchRoot);
+                if (createdArgs.Item == null)
+                    return;
+                if (createdArgs.Item.Branch == null)
+                    return;
+                if (createdArgs.Item.Branch.InnerItem.Children.Count != 1)
+                    return;
+                Item branchRoot = createdArgs.Item.Branch.InnerItem.Children[0];
+
+                if (branchRoot != null && branchRoot.ID == Templates.MicrositeRoot.ID)
+                {
+                    PopupSheerSettings(branchRoot);
+                }
             }
         }
 
@@ -30,7 +37,7 @@ namespace Sitecore.Foundation.Microsites.Pipelines
             Text.UrlString parameters = new Text.UrlString();
             parameters.Add(Constants.RootNodeName, branchRoot.ID.ToString());
 
-            Shell.Framework.Windows.RunApplication("Site Builder");
+            Shell.Framework.Windows.RunApplication("Site Builder",parameters.ToString());
         }
     }
 }

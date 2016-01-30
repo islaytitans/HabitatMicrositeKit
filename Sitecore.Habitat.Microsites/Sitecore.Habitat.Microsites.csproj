@@ -129,6 +129,12 @@
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sitecore.Foundation.Microsites\Sitecore.Foundation.Microsites.csproj">
+      <Project>{731d3450-9bc7-48d7-90a3-c07257f8da13}</Project>
+      <Name>Sitecore.Foundation.Microsites</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
