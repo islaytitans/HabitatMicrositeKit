@@ -8,25 +8,65 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    
-        name: <asp:TextBox ID="txtname" runat="server"></asp:TextBox>
+        <asp:Panel runat="server" ID="panelForm">
+            <div>
+                 <ul>
+                    <li>
+                        <b>Site Properties for: <asp:Label runat="server" ID="lblSite"/> </b>
+                        </li>
 
-         hostname: <asp:TextBox ID="txtHostname" runat="server"></asp:TextBox>
+                    <li>
+                        <asp:Label runat="server" AssociatedControlID="txtname">name: </asp:Label>
+                        <asp:TextBox ID="txtname" runat="server"></asp:TextBox>
+                    </li>
+                    <li>
+                        <asp:Label runat="server" AssociatedControlID="txtHostname"> hostname: </asp:Label>
+                        <asp:TextBox ID="txtHostname" runat="server"></asp:TextBox>
+                    </li>
+                    <li>
+                        <asp:Label runat="server" AssociatedControlID="txtRootPath"> rootPath:</asp:Label>
+                        <asp:TextBox ID="txtRootPath" runat="server"></asp:TextBox>
+                    </li>
+                    <li>
+                        <asp:Label runat="server" AssociatedControlID="txtStartItem"> startItem:</asp:Label>
+                        <asp:TextBox ID="txtStartItem" runat="server"></asp:TextBox>
+                    </li>
 
-         rootPath: <asp:TextBox ID="txtRootPath" runat="server"></asp:TextBox>
+                    <li>
+                        <asp:Label runat="server" AssociatedControlID="txtLanguage"> language: </asp:Label>
+                        <asp:TextBox ID="txtLanguage" runat="server"></asp:TextBox>
+                    </li>
+                    <li>
+                        <asp:Label runat="server" AssociatedControlID="txtDatabase"> database: </asp:Label>
+                        <asp:TextBox ID="txtDatabase" runat="server"></asp:TextBox>
+                    </li>
+                    <li>
+                        <asp:Label runat="server" AssociatedControlID="txtContent"> content:  </asp:Label>
+                        <asp:TextBox ID="txtContent" runat="server"></asp:TextBox>
+                    </li>
+                   
+                     <li>
+                        <asp:Label runat="server" AssociatedControlID="txtContent"> content:  </asp:Label>
+                        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                    </li>
 
-        startItem: <asp:TextBox ID="txtStartItem" runat="server"></asp:TextBox>
-
-         language: <asp:TextBox ID="txxtLanguage" runat="server"></asp:TextBox>
-
-        database: <asp:TextBox ID="txtDatabase" runat="server"></asp:TextBox>
-
-        content: <asp:TextBox ID="txtContent" runat="server"></asp:TextBox>
-        
-        <asp:Button ID="btnCreateSite" runat="server" Text="Button" OnClick="btnCreateSite_Click" />
-    
-    </div>
+                      <li>
+                        <asp:Label runat="server" AssociatedControlID="txtBgColour"> background color:  </asp:Label>
+                        <asp:TextBox ID="txtBgColour" runat="server"></asp:TextBox>
+                    </li>
+                      <li>
+                        <asp:Label runat="server" AssociatedControlID="txtTextColor"> text color:  </asp:Label>
+                        <asp:TextBox ID="txtTextColor" runat="server"></asp:TextBox>
+                    </li>
+                    <li>
+                        <asp:Button ID="btnCreateSite" runat="server" Text="Save Settings" OnClick="btnCreateSite_Click" />
+                    </li>
+                </ul>
+            </div>
+        </asp:Panel>
+          <asp:Panel runat="server" ID="panelUpdated" Visible="false">
+              Site Settings updated!!
+          </asp:Panel>
     </form>
 </body>
 </html>
