@@ -36,10 +36,9 @@ namespace Sitecore.Habitat.Microsites.Dialogs
                             var values = new NameValueCollection();
                             values.Add("name", txtname.Text);
                             values.Add("hostname", txtHostname.Text);
-                            values.Add("rootPath", txtRootPath.Text);
-                            values.Add("startItem", txtStartItem.Text);
+                            values.Add("rootPath", rootNodeMaster.Paths.Path);
+                            values.Add("startItem", "/Home");
                             values.Add("language", txtLanguage.Text);
-                            values.Add("content", txtContent.Text);
 
 
                             rootNodeMaster[Foundation.Microsites.Templates.MicrositeRoot.Fields.SiteParameters] = StringUtil.NameValuesToString(values, " &");
