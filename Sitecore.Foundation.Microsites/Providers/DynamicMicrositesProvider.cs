@@ -17,26 +17,12 @@ using StringDictionary = Sitecore.Collections.StringDictionary;
 
 namespace Sitecore.Foundation.Microsites.Providers
 {
-    public class DynamicMicrositesProvider : ConfigSiteProvider
+    public class DynamicMicrositesProvider : SiteProvider
     {
         private object _lock = new object();
         private SafeDictionary<string, Site> _siteDictionary;
         private SiteCollection _sitesCollection;
         public string DatabaseName { get; set; }
-        protected readonly Sitecore.Sites.SiteProvider siteProvider;
-
-        public DynamicMicrositesProvider(Sitecore.Sites.SiteProvider implementation)
-        {
-            Assert.IsNotNull(implementation, "implementation");
-
-            siteProvider = implementation;
-        }
-
-        public override void Initialize(string name, NameValueCollection config)
-        {
-            base.Initialize(name, config);
-            siteProvider.Initialize(name, config);
-        }
 
         public override Site GetSite(string siteName)
         {
@@ -48,11 +34,7 @@ namespace Sitecore.Foundation.Microsites.Providers
 
             if (_siteDictionary.TryGetValue(siteName, out site))
             {
-                site = siteProvider.GetSite(siteName);
-            }
-            else
-            {
-                site = base.GetSite(siteName);
+                site = _siteDictionary[siteName];
             }
 
             return site;
@@ -64,11 +46,7 @@ namespace Sitecore.Foundation.Microsites.Providers
 
             var sitesCollection = new SiteCollection();
 
-            // Add dynamic sites
             sitesCollection.AddRange(_sitesCollection);
-
-            // Add configured sites
-            sitesCollection.AddRange(base.GetSites());
 
             return sitesCollection;
         }
