@@ -133,20 +133,30 @@ namespace Sitecore.Foundation.Microsites.Providers
         {
             Assert.ArgumentNotNull(item, "item");
 
+            Site site = null;
+
             if (IsValidSiteName(item[Templates.MicrositeRoot.Fields.SiteName]))
             {
                 var properties = GetSiteProperties(item);
 
-                var site = new Site(item[Templates.MicrositeRoot.Fields.SiteName], properties);
-
-                //TODO - determine the purpose of setting the site item id and how to achieve it
-
-                //site.SetSiteItemId(item.ID);
-
-                return site;
+                if (AssertMandatoryProperties(properties))
+                {
+                    site = new Site(item[Templates.MicrositeRoot.Fields.SiteName], properties);
+                }
             }
 
-            return null;
+            return site;
+        }
+
+        private bool AssertMandatoryProperties(StringDictionary properties)
+        {
+            return (properties.ContainsKey("siteName")
+                    && properties.ContainsKey("virtualFolder")
+                    && properties.ContainsKey("physicalFolder")
+                    && properties.ContainsKey("rootPath")
+                    && properties.ContainsKey("startItem")
+                    && properties.ContainsKey("domain")
+                    && properties.ContainsKey("database"));
         }
 
         [MethodImpl(MethodImplOptions.NoOptimization)]
