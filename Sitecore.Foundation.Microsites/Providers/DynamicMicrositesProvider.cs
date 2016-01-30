@@ -17,7 +17,7 @@ using StringDictionary = Sitecore.Collections.StringDictionary;
 
 namespace Sitecore.Foundation.Microsites.Providers
 {
-    public class DynamicMicrositesProvider : Sitecore.Sites.SiteProvider
+    public class DynamicMicrositesProvider : ConfigSiteProvider
     {
         private object _lock = new object();
         private SafeDictionary<string, Site> _siteDictionary;
@@ -50,6 +50,10 @@ namespace Sitecore.Foundation.Microsites.Providers
             {
                 site = siteProvider.GetSite(siteName);
             }
+            else
+            {
+                site = base.GetSite(siteName);
+            }
 
             return site;
         }
@@ -60,8 +64,11 @@ namespace Sitecore.Foundation.Microsites.Providers
 
             var sitesCollection = new SiteCollection();
 
+            // Add dynamic sites
             sitesCollection.AddRange(_sitesCollection);
-            sitesCollection.AddRange(siteProvider.GetSites());
+
+            // Add configured sites
+            sitesCollection.AddRange(base.GetSites());
 
             return sitesCollection;
         }
